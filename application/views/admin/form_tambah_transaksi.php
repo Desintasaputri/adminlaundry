@@ -44,17 +44,9 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Jam<span class="required">*</span>
                         </label>
-                        <div class="jam-digital-malasngoding">
-  <div class="kotak">
-    <p id="jam"></p>
-  </div>
-  <div class="kotak">
-    <p id="menit"></p>
-  </div>
-  <div class="kotak">
-    <p id="detik"></p>
-  </div>
-</div>
+                         <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="time" id="jam_jemput" name="jam_jemput" value="<?php echo $jam_jemput; ?> " required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
  
                       </div>
                      <!--  <div class="form-group">

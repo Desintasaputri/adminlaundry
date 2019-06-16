@@ -14,6 +14,13 @@ class App_Admin extends CI_Model {
 	function input_data($data,$table){
 		$this->db->insert($table,$data);
 	}
+	function get_where($table = null, $where = null)
+	{
+		$this->db->from($table);
+		$this->db->where($where);
+
+		return $this->db->get();
+	}
 	function update($table = null, $data = null, $where = null)
 	{
 		$this->db->update($table, $data, $where);
