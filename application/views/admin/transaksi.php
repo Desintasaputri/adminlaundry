@@ -31,6 +31,7 @@
                           <th>Tanggal Jemput </th>
                           <th>Jam Jemput</th>
                           <th>Notes</th>
+                          <th>Jenis Transakasi</th>
                           <th>Aksi</th>
                           
                         </tr>
@@ -47,6 +48,7 @@
                           <td><?php echo $transaksi->tanggal_jemput; ?></td>
                           <td><?php echo $transaksi->jam_jemput; ?></td>
                           <td><?php echo $transaksi->notes_transaksi; ?></td>
+                          <td><?php echo $transaksi->jenis_transaksi;?></td>
                           <td>
                              <?php echo anchor('transaksi/update_transaksi/'.$transaksi->kode_transaksi, '<i class="fa fa-edit">edit</i>');?>
                              <?php echo anchor('transaksi/hapus/'.$transaksi->kode_transaksi, '<i class="fa fa-trash">delete</i>');?>  </td>
