@@ -85,8 +85,6 @@ public function aksi_tambahdata()
 		$data['tanggal_jemput'] = $this->input->post('tanggal_jemput', TRUE);
 		$data['jam_jemput'] = $this->input->post('jam_jempu', TRUE);
 		$data['notes_transaksi'] = $this->input->post('notes_transaksi', TRUE);
-		
-
 		$data['cek']= $this->app_admin->getAll();
 		$data['header_tambahmobil'] = "Tambah Data";
 
@@ -99,6 +97,7 @@ public function aksi_tambahdata()
 		$this->app_admin->hapus_data($where,'transaksi');
 		redirect('transaksi/index');
 	}
+
 function edit($kode_transaksi){
 		$where = array('kode_transaksi' => $kode_transaksi);
 		$data['transaksi'] = $this->app_admin->edit_data($where,'transaksi')->result();
@@ -127,7 +126,11 @@ function edit($kode_transaksi){
 				
 				'tanggal_jemput' => $this->input->post('tanggal_jemput', TRUE),
 				'jam_jemput' => $this->input->post('jam_jemput', TRUE),
+				'status_bayar' => $this->input->post('status_bayar', TRUE),
 				'notes_transaksi' => $this->input->post('notes_transaksi', TRUE),
+				'qty_transaksi' => $this->input->post('qty_transaksi', TRUE),
+				'total' => $this->input->post('total', TRUE),
+				'jenis_transaksi' => $this->input->post('jenis_transaksi', TRUE),
 				
 			);
 
@@ -187,8 +190,11 @@ function edit($kode_transaksi){
 			
 			$data['tanggal_jemput'] = $tran->tanggal_jemput;
 			$data['jam_jemput'] = $tran->jam_jemput;
-			
+			$data['status_bayar'] = $tran->status_bayar;			
 			$data['notes_transaksi'] = $tran->notes_transaksi;
+			$data['qty_transaksi'] = $tran->qty_transaksi;
+			$data['total'] = $tran->total;
+			$data['jenis_transaksi'] = $tran->jenis_transaksi;
 			
 		}
 

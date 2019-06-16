@@ -68,12 +68,40 @@ if($this->session->flashdata('error'))
                           <input type="date" id="jam_jemput" name="jam_jemput" value="<?php echo $jam_jemput; ?> " required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Jenis Transakasi<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="jenis_transaksi" name="jenis_transaksi" value="<?php echo $jenis_transaksi; ?> " required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Status Bayar<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="status_bayar" name="status_bayar" value="<?php echo $status_bayar; ?> " required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
                      
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Notes<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="notes_transaksi" name="notes_transaksi" value="<?php echo $notes_transaksi; ?> " required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Jumlah Kiloan<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="qty_transaksi" name="qty_transaksi" value="<?php echo $qty_transaksi; ?> " required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Total<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="total" name="total" value="<?php echo $total; ?> " required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       
