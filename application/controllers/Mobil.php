@@ -35,6 +35,7 @@ class Mobil extends CI_Controller {
 			{
 
 				$gbr = $this->upload->data(); 
+
 			//insert
 
 			$this->load->helper('date');

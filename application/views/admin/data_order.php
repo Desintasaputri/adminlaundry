@@ -28,9 +28,9 @@
                       <thead>
                         <tr>
                           <th>No.</th>
-                          <th>Nama</th>
-                          <th>Alamat</th>
-                          <th>Telpon</th>
+                          <th>kode</th>
+                          <th>nama</th>
+                          <th>status</th>
                           <th>Aksi</th>
                           
                         </tr>
@@ -40,16 +40,18 @@
                     <?php 
 
                     $no = 1;
-                    foreach ($data->result() as $pelanggan) : ?>
+                    foreach ($data as $order) : ?>
 
                         <tr>
                           <td><?php echo $no++; ?></td>
-                          <td><?php echo $pelanggan->nama_pelanggan; ?></td>
-                          <td><?php echo $pelanggan->alamat_pelanggan; ?></td>
-                          <td><?php echo $pelanggan->telpon_pelanggan; ?></td>
+                          <td><?php echo $order->kode_transaksi; ?></td>
+                          <td><?php echo $order->nama_pelanggan; ?></td>
+                          <td><?php echo $order->status; ?></td>
                           <td>
-                             <?php echo anchor('pelanggan/update_pelanggan/'.$pelanggan->id_pelanggan, '<i class="fa fa-edit">edit</i>');?>
-                             <?php echo anchor('pelanggan/hapus/'.$pelanggan->id_pelanggan, '<i class="fa fa-trash">delete</i>');?>  </td>
+                            
+                            <a href="<?php echo base_url('list_order/update_order/'.$order->kode_transaksi); ?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                          </td>
+
                         </tr>
 
                     <?php endforeach; ?>
