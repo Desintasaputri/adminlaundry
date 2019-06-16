@@ -28,8 +28,10 @@
                       <thead>
                         <tr>
                           <th>No.</th>
+                          <th>Jenis Transaksi </th>
                           <th>Tanggal Jemput </th>
                           <th>Jam Jemput</th>
+                          <th>Harga</th>
                           <th>Notes</th>
                           <th>Aksi</th>
                           
@@ -44,8 +46,10 @@
 
                         <tr>
                           <td><?php echo $no++; ?></td>
+                          <td><?php echo $transaksi->jenis_transaksi; ?></td>
                           <td><?php echo $transaksi->tanggal_jemput; ?></td>
                           <td><?php echo $transaksi->jam_jemput; ?></td>
+                          <td><?php echo $transaksi->total; ?></td>
                           <td><?php echo $transaksi->notes_transaksi; ?></td>
                           <td>
                              <?php echo anchor('transaksi/update_transaksi/'.$transaksi->kode_transaksi, '<i class="fa fa-edit">edit</i>');?>
