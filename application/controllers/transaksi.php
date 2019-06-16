@@ -83,11 +83,11 @@ public function aksi_tambahdata()
 
 		
 		$data['tanggal_jemput'] = $this->input->post('tanggal_jemput', TRUE);
-		$data['jam_jemput'] = $this->input->post('jam_jempu', TRUE);
+		$data['jam_jemput'] = $this->input->post('jam_jemput', TRUE);
 		$data['notes_transaksi'] = $this->input->post('notes_transaksi', TRUE);
 		
 
-		$data['cek']= $this->app_admin->getAll();
+		$data['cek']= $this->app_admin->getAll3();
 		$data['header_tambahmobil'] = "Tambah Data";
 
 		$this->template->admin('admin/form_tambah_transaksi', $data);

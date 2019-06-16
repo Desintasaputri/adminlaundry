@@ -1,45 +1,66 @@
+
 <?php 
+defined('BASEPATH') OR exit('No Direct Script Access allowed');
 
 class Login extends CI_Controller{
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();		
-		$this->load->model('m_login');
-		$this->load->library('template');
-
-
+		$this->load->model('app_admin');
 	}
 
-	function index(){
-		$this->template->login('admin/isi_login');
-	}
+	function index()
+	{
+				// echo password_hash('admin', PASSWORD_DEFAULT, ['cost' => 10]);
 
-	function aksi_login(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$where = array(
-			'username' => $username,
-			'password' => md5($password)
-			);
-		$cek = $this->m_login->cek_login("tb_admin",$where)->num_rows();
-		if($cek > 0){
+		if ($this->input->post('submit', TRUE) == 'Submit') 
+		{
+			$user = $this->input->post('username_pegawai', TRUE);
+			$pass = $this->input->post('password_pegawai', TRUE);
 
-			$data_session = array(
-				'nama' => $username,
-				'status' => "login"
-				);
+			$cek = $this->app_admin->get_where('data_pegawai', array('username_pegawai' => $user ));
 
-			$this->session->set_userdata($data_session);
+			if ($cek->num_rows() > 0) {
+				$data = $cek->row();
 
-			redirect(base_url("admin"));
+				if (password_verify($pass, $data->password_pegawai))
+			    {
+			    	$datauser = array (
+			    		'id_pegawai' => $data->id_pegawai,
+			    		'username_pegawai' => $data->username_pegawai,
+			    		'nama_pegawai' => $data->nama_pegawai,
+			    		'jabatan' => $data->jabatan,
+			    		'login' => TRUE
+			    	);
 
-		}else{
-			echo "Username dan password salah !";
+			    	$this->session->set_userdata($datauser);
+
+			    	redirect('admin');
+				} else {
+					$this->session->set_flashdata('alert', "Password yang anda masukkan salah");
+				}
+				
+
+			} else {
+					$this->session->set_flashdata('alert', "Username yang anda masukkan salah");
+
+
+			}
+			
 		}
+		if($this->session->userdata('login') == TRUE)
+		{
+			redirect('admin');
+		}
+
+		$this->load->view('admin/login');
+
+	}
+	public function logout()
+	{
+		$this->session->sess_destroy(); 
+		redirect('login');
 	}
 
-	function logout(){
-		$this->session->sess_destroy();
-		redirect(base_url('login'));
-	}
 }
