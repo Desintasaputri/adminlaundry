@@ -2,7 +2,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Table Data Transaksi <small><?php echo $this->session->userdata("nama"); ?></small></h2>
+                    <h2>Table Data Transaski <small><?php echo $this->session->userdata("nama"); ?></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -28,22 +28,12 @@
                       <thead>
                         <tr>
                           <th>No.</th>
-                          <th>Kode Transakasi</th>
-                          <th>ID Pelanggan</th>
-                          <th>Tanggal Ambil</th>
+                          <th>Tanggal Jemput </th>
                           <th>Jam Jemput</th>
-                          <th>ID Pegawia</th>
-                          <th>Jenis Transaksi</th>
-                          <th>Kode Transakasi</th>
-                          <th>Status Order</th>
-                          <th>Tanggal Transaksi</th>
-                          <th>Tanggal Selesai</th>
-                          <th>Status Pembayaran</th>
-                          <th>Total Pembayaran</th>
                           <th>Notes</th>
-                          <th  colspan="2">Pengaturan</th>
+                          <th>Aksi</th>
                           
-                        </tr>   
+                        </tr>
                       </thead>
                       <tbody>
 
@@ -54,29 +44,15 @@
 
                         <tr>
                           <td><?php echo $no++; ?></td>
-
-                          <td><?php echo $transaksi->kode_transaksi; ?></td>
-                          <td><?php echo $transaksi->id_pelanggan; ?></td>
                           <td><?php echo $transaksi->tanggal_jemput; ?></td>
                           <td><?php echo $transaksi->jam_jemput; ?></td>
-                          <td><?php echo $transaksi->id_pegawai; ?></td>
-                          <td><?php echo $transaksi->jenis_transaksi; ?></td>
-                          <td><?php echo $transaksi->kode_transaksi; ?></td>
-                          <td><?php echo $transaksi->status_order; ?></td>
-                          <td><?php echo $transaksi->tanggal_transaksi; ?></td>
-                          <td><?php echo $transaksi->tanggal_selesai; ?></td>
-                          <td><?php echo $transaksi->status_bayar; ?></td>
-                          <td><?php echo $transaksi->total; ?></td>
                           <td><?php echo $transaksi->notes_transaksi; ?></td>
-
-
-                         <td>
-                       
-                        <a href="<?php echo base_url() ?>Transaksi/hapus/<?php echo $transaksi->id_pelanggan ?>" class="btn btn-success">Hapus</a>
-                    </td>
+                          <td>
+                             <?php echo anchor('transaksi/update_transaksi/'.$transaksi->kode_transaksi, '<i class="fa fa-edit">edit</i>');?>
+                             <?php echo anchor('transaksi/hapus/'.$transaksi->kode_transaksi, '<i class="fa fa-trash">delete</i>');?>  </td>
                         </tr>
-                    <?php $no++; 
-                    endforeach; ?>
+
+                    <?php endforeach; ?>
 
 
                       </tbody>

@@ -1,8 +1,7 @@
-            <div class="page-title">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+ 
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Table Data Customer <small><?php echo $this->session->userdata("nama"); ?></small></h2>
+                    <h2>Laporan </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -22,45 +21,44 @@
                   </div>
                   <div class="x_content">
                     <p class="text-muted font-13 m-b-30">
-                      
+                      Data laporan Pemasukan
                     </p>
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>No.</th>
-                          <th>Nama</th>
-                          <th>Alamat</th>
-                          <th>Telpon</th>
-                          <th>Aksi</th>
+                          <th>Jenis Transaksi</th>
+                          <th>Quantity</th>
+                          <th>Harga</th>
+                          <th>Tanggal Transaksi</th>
                           
                         </tr>
                       </thead>
-                      <tbody>
 
+
+                      <tbody>
                     <?php 
 
                     $no = 1;
-                    foreach ($data->result() as $pelanggan) : ?>
+                    foreach ($data->result() as $pemasuk) : ?>
 
                         <tr>
                           <td><?php echo $no++; ?></td>
-                          <td><?php echo $pelanggan->nama_pelanggan; ?></td>
-                          <td><?php echo $pelanggan->alamat_pelanggan; ?></td>
-                          <td><?php echo $pelanggan->telpon_pelanggan; ?></td>
-                          <td>
-                             <?php echo anchor('pelanggan/update_pelanggan/'.$pelanggan->id_pelanggan, '<i class="fa fa-edit">edit</i>');?>
-                             <?php echo anchor('pelanggan/hapus/'.$pelanggan->id_pelanggan, '<i class="fa fa-trash">delete</i>');?>  </td>
+                          <td><?php echo $pemasuk->jenis_transaksi; ?></td>
+                          <td><?php echo $pemasuk->qty_transaksi; ?></td>
+                          <td><?php echo $pemasuk->total; ?></td>
+                          <td><?php echo $pemasuk->tanggal_transaksi; ?></td>
+                          
+                          
+
                         </tr>
 
                     <?php endforeach; ?>
 
 
+
                       </tbody>
                     </table>
-
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>

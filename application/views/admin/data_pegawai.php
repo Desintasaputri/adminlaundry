@@ -2,7 +2,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Table Data Customer <small><?php echo $this->session->userdata("nama"); ?></small></h2>
+                    <h2>Table Data Pegawai <small><?php echo $this->session->userdata("nama"); ?></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -28,13 +28,11 @@
                       <thead>
                         <tr>
                           <th>No.</th>
-                          <th>Id.Customer</th>
-                          <th>Jenis Cucian</th>
-                          <th>Tanggal Trnsakasi</th>
-                          <th>Tanggal Bayar</th>
-                          <th>Status Pembayaran</th>
-                          <th>Total</th>
-                          <th  colspan="2">Pengaturan</th>
+                          <th>Nama</th>
+                          <th>Alamat</th>
+                          <th>Telpon</th>
+                          <th>Jabatan</th>
+                          <th>Aksi</th>
                           
                         </tr>
                       </thead>
@@ -50,12 +48,15 @@
                           <td><?php echo $pegawai->nama_pegawai; ?></td>
                           <td><?php echo $pegawai->alamat_pegawai; ?></td>
                           <td><?php echo $pegawai->telpon_pegawai; ?></td>
+                          <td><?php echo $pegawai->jabatan; ?></td>
                           <td>
-                           <a href="<?php echo base_url() ?>pegawai/Hapus/<?php echo $pegawai->id_pegawai ?>" class="btn btn-success">Hapus</a>
-                          </td>
+                             <?php echo anchor('pegawai/update_pegawai/'.$pegawai->id_pegawai, '<i class="fa fa-edit">edit</i>');?>
+                             <?php echo anchor('pegawai/hapus/'.$pegawai->id_pegawai, '<i class="fa fa-trash">delete</i>');?>                         </td>
+                          
+
                         </tr>
-                    <?php $no++; 
-                    endforeach; ?>
+
+                    <?php endforeach; ?>
 
 
                       </tbody>

@@ -18,62 +18,48 @@
 
                   <li><a><i class="fa fa-calendar-o"></i> List Order <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url(); ?>mobil/tambah_mobil">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>mobil/index">Data</a></li>
+                
+                      <li><a href="<?php echo base_url() ?>list_order/index">Data</a></li>
 
                     </ul>
                   </li>
                   <li><a><i class="fa fa-user"></i> Customer <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url(); ?>pelanggan/tambah_pelanggan">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>pelanggan/index">Data</a></li> 
+                      <li><a href="<?= base_url() ?>pelanggan/tambah_data">Tambah Data</a></li>
+                      <li><a href="<?php echo base_url() ?>pelanggan/index">Data</a></li>
 
                     </ul>
                   </li>
                   <li><a><i class="fa fa-book"></i> Pegawai <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                       <li><a href="<?= base_url(); ?>Pegawai/tambah_pegawai">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>Pegawai/index">Data</a></li>
+                      <li><a href="<?= base_url(); ?>pegawai/tambah_data">Tambah Data</a></li>
+                      <li><a href="<?php echo base_url() ?>pegawai/index">Data</a></li>
 
                     </ul>
                   </li>
                    <li><a><i class="fa fa-briefcase"></i> Pengeluaran <span class="fa fa-chevron-down"></span></a>
-                     <ul class="nav child_menu">
-                       <li><a href="<?= base_url(); ?>Pengeluaran/tambah_pengeluaran">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>Pengeluaran">Data</a></li>
+                    <ul class="nav child_menu">
+                      <li><a href="<?= base_url(); ?>pengeluaran/tambah_data">Tambah Data</a></li>
+                      <li><a href="<?php echo base_url() ?>pengeluaran/index">Data</a></li>
 
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-archive"></i> Ambil Cucian <class="fa fa-chevron-down"></a>
-                    <!-- <ul class="nav child_menu">
-                      <li><a href="#">Pesanan</a></li>
-                      <li><a href="#">Proses Peminjaman</a></li>
-                      <li><a href="#">Transaksi Selesei</a></li>
-
-                    </ul> -->
-                  </li>
+                  
                    <li><a><i class="fa fa-align-justify"></i> Laporan <span class="fa fa-chevron-down"></span></a>
-                     <ul class="nav child_menu">
-                       <li><a href="<?= base_url(); ?>Laporan/tambah_laporan">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>laporan/index">Data</a></li>
+                    <ul class="nav child_menu">
+                     <li><a href="<?= base_url(); ?>laporan/index">Laporan Pengeluaran</a></li>
+                       <li><a href="<?= base_url(); ?>laporan/pemasuk">Laporan Pemasukan</a></li>
+                       
 
                     </ul> 
                   </li>
-					        <li><a><i class="fa fa-paperclip"></i> Pengaturan <span class="fa fa-chevron-down"></span></a>
+					
+<li><a><i class="fa fa-copy"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                       <li><a href="<?= base_url(); ?>Pengaturan/tambah_pengaturan">Edit Data Customer</a></li>
-                       <li><a href="<?= base_url(); ?>Pengaturan/tambah_pengaturan">Edit Data Pegawi</a></li>
-                      <li><a href="<?php echo base_url() ?>Pengaturan/index">Edit Data Pengeluaran</a></li>
-  
-                    </ul>
-                  </li>
+                      <li><a href="<?= base_url(); ?>transaksi/tambah_data">Tambah Data</a></li>
+                      <li><a href="<?php echo base_url() ?>transaksi/index">Data</a></li>
 
-                  <li><a><i class="fa fa-user"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="<?= base_url(); ?>Transaksi/tambah_transaksi">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>Transaksi/index">Data</a></li> 
-
-                    </ul>
+                    </ul> 
                   </li>
 
 
