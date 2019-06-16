@@ -48,22 +48,16 @@
                    <li><a><i class="fa fa-align-justify"></i> Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                      <li><a href="<?= base_url(); ?>laporan/index">Laporan Pengeluaran</a></li>
-                       <li><a href="<?= base_url(); ?>laporan/index">Laporan Pemasukan</a></li>
+                       <li><a href="<?= base_url(); ?>laporan/pemasuk">Laporan Pemasukan</a></li>
                        
 
                     </ul> 
                   </li>
-					 <li><a><i class="fa fa-paperclip"></i> Pengaturan <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="<?= base_url(); ?>mobil/tambah_mobil">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>mobil/index">Data</a></li>
-
-                    </ul> 
-                  </li>
+					
 <li><a><i class="fa fa-copy"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url(); ?>mobil/tambah_mobil">Tambah Data</a></li>
-                      <li><a href="<?php echo base_url() ?>mobil/index">Data</a></li>
+                      <li><a href="<?= base_url(); ?>transaksi/tambah_data">Tambah Data</a></li>
+                      <li><a href="<?php echo base_url() ?>transaksi/index">Data</a></li>
 
                     </ul> 
                   </li>

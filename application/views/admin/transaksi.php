@@ -1,7 +1,8 @@
- 
+            <div class="page-title">
+              <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Laporan </h2>
+                    <h2>Table Data Transaski <small><?php echo $this->session->userdata("nama"); ?></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -21,44 +22,45 @@
                   </div>
                   <div class="x_content">
                     <p class="text-muted font-13 m-b-30">
-                      Data laporan Pemasukan
+                      
                     </p>
-                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
                           <th>No.</th>
-                          <th>Jenis Transaksi</th>
-                          <th>Quantity</th>
-                          <th>Harga</th>
-                          <th>Tanggal Transaksi</th>
+                          <th>Tanggal Jemput </th>
+                          <th>Jam Jemput</th>
+                          <th>Notes</th>
+                          <th>Aksi</th>
                           
                         </tr>
                       </thead>
-
-
                       <tbody>
+
                     <?php 
 
                     $no = 1;
-                    foreach ($data->result() as $pemasuk) : ?>
+                    foreach ($data->result() as $transaksi) : ?>
 
                         <tr>
                           <td><?php echo $no++; ?></td>
-                          <td><?php echo $pemasuk->jenis_transaksi; ?></td>
-                          <td><?php echo $pemasuk->qty_transaksi; ?></td>
-                          <td><?php echo $pemasuk->total; ?></td>
-                          <td><?php echo $pemasuk->tanggal_transaksi; ?></td>
-                          
-                          
-
+                          <td><?php echo $transaksi->tanggal_jemput; ?></td>
+                          <td><?php echo $transaksi->jam_jemput; ?></td>
+                          <td><?php echo $transaksi->notes_transaksi; ?></td>
+                          <td>
+                             <?php echo anchor('transaksi/update_transaksi/'.$transaksi->kode_transaksi, '<i class="fa fa-edit">edit</i>');?>
+                             <?php echo anchor('transaksi/hapus/'.$transaksi->kode_transaksi, '<i class="fa fa-trash">delete</i>');?>  </td>
                         </tr>
 
                     <?php endforeach; ?>
 
 
-
                       </tbody>
                     </table>
+
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>

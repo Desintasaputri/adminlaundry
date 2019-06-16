@@ -14,4 +14,9 @@ class Laporan extends CI_Controller {
 		$data['data'] = $this->app_admin->get_all('pengeluaran');
 		$this->template->admin('admin/isi_datalaporan',$data);
 	}
+	public function pemasuk()
+	{
+		$data['data'] = $this->app_admin->get_all('transaksi');
+		$this->template->admin('admin/isi_datalaporanpemasukan',$data);
+	}
 }

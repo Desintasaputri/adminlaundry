@@ -61,6 +61,10 @@ class App_Admin extends CI_Model {
 		$query = $this->db->query("SELECT pengeluaran.kode_pengeluaran,pengeluaran.jenis_pengeluaran,pengeluaran.qty_pengeluaran,pengeluaran.nominal,pengeluaran.tanggal_pengeluaran,pengeluaran.notes_pengeluaran from pengeluaran WHERE pengeluaran.kode_pengeluaran = '$id' ");
 		return $query->result();
 	}
+	function getidtransaksi($id){
+		$query = $this->db->query("SELECT transaksi.kode_transaksi,transaksi.id_pelanggan,transaksi.tanggal_jemput,transaksi.jam_jemput,transaksi.id_pegawai,transaksi.jenis_transaksi,transaksi.qty_transaksi,transaksi.status_order,transaksi.status_bayar,transaksi.tanggal_transaksi,transaksi.tanggal_selesai,transaksi.notes_transaksi,transaksi.total from transaksi WHERE transaksi.kode_transaksi = '$id' ");
+		return $query->result();
+	}
 
 	function getALL(){
 		$this->db->select('*');
@@ -77,6 +81,12 @@ class App_Admin extends CI_Model {
 	function getALL2(){
 		$this->db->select('*');
 		$this->db->from('pengeluaran');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function getALL3(){
+		$this->db->select('*');
+		$this->db->from('transaksi');
 		$query = $this->db->get();
 		return $query->result();
 	}
